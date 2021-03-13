@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/carros', 'CarrosController@getCarros');
+Route::post('/carros', 'CarrosController@setCarros');
+Route::get('/carros/{id}', 'CarrosController@getCarrosbyId');
+Route::put('/carros/{id}', 'CarrosController@setCarrosbyId');
+Route::delete('/carros/{id}', 'CarrosController@deleteCarrosbyId');
+
