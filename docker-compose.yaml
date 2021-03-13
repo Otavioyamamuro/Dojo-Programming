@@ -1,18 +1,13 @@
-version: "3.7"
+version: "3.3"
 services:
   app:
     build:
       args:
         user: estadao
         uid: 1000
-      context: ../test-dev
+      context: ../Dojo-Programming
       dockerfile: docker/Dockerfile
     image: estadao-test-dev
-    healthcheck:
-      interval: 10s
-      timeout: 3s
-      retries: 3
-      start_period: 30s
     container_name: estadao-test-dev-app
     restart: unless-stopped
     working_dir: /var/www/
