@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 class CarrosController extends Controller
 {
     function getCarros(){
-        return "getCarros";
+
+        $arr = Array('celta','polo','civic','argo');
+
+        return json_encode($arr);
     }
 
     function setCarros(){
