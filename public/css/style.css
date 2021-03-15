@@ -5,44 +5,130 @@
 
     font-family: Arial, Helvetica, sans-serif;
 }
+.container{
+    width: 100%;
+    max-width: 1180px;
+    display:flex;
+    margin: auto;
+    padding: 20px;
+
+}
+
+.div-pesquisa input:focus,
+.div-add button:focus,
+.div-pesquisa button:focus,
+.div-button button:focus,
+.popup input[type="text"]:focus,
+.popup button:focus
+{
+    outline: none;
+}
+
 
 header{
-    height: 100px;
     background-color: #2e2e2e;
 }
-.pesquisa input{
-    border:1px solid black;
-    height: 30px;
-    width: 100px;
+
+.container.div-header{
+    height: 90px;
+    align-items: center;
+    justify-content: space-between;
 
 }
-.pesquisa button{
-    border: 1px solid black;
-    background-color: rgb(0, 0, 0);
-    height: 30px;
+
+.div-logo img{
+    width: 65px;
+}
+
+.items-header{
+    max-width: 320px;
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.div-add button{
+    width: 50px;
+    padding-top: 5px;
+    background-color: transparent;
+    color: white;
+
+    border:0;
     cursor: pointer;
-    color:white;
-
 }
 
-.container{
-    width: 100vw;
-    height: 100vh;
+.div-add button svg{
+    width:30px;
+    transition: .2s linear;
+}
 
-    display:flex;
+.div-add button svg:hover{
+    width: 33px;
+}
+
+.div-pesquisa{
+    width:100%;
+    max-width: 250px;
+    padding: 1px 5px;
+
+    background-color: white;
+    display: flex;
+    align-items: center;
+
+    border-radius: 15px;
+    overflow:hidden;
+}
+
+.div-pesquisa input{
+    height: 30px;
+    width: 88%;
+    padding: 0 5px;
+    border:0;
+}
+
+.div-pesquisa button{
+    height: 20px;
+    width: 20px; 
+    padding: 1px 0 0 5px;
+    background-color:transparent;
+
+    border: 0;
+    border-left: 1px solid #2e2e2e;
+    border-radius:0;
+
+    cursor: pointer;
+}
+
+.div-pesquisa button svg{
+    width: 17px;
+    transition: .2s linear;
+}
+.div-pesquisa button svg:hover{
+    width: 19px;
+    margin-top: -1px;
+}
+
+
+/*****************************************/
+
+.div-cards{
+    width: 100%;
+
+    display: flex;
     justify-content: space-around;
-
     flex-wrap: wrap;
-
 }
 
 .card{
     width: 200px;
     height: 100px;
+    padding: 10px;
+    margin-bottom: 20px;
+
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgb(179, 179, 179);
-
-    padding: 10px;
 
     display: flex;
 }
@@ -53,42 +139,135 @@ header{
     justify-content: space-evenly;
     flex: 1;
 }
-.button{
+
+.div-button{
+    width: 30px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    flex: 1;
 }
 
-.button button{
-    border: 1px solid black;
-    background-color: rgb(0, 0, 0);
-    height: 25px;
-cursor: pointer;
-    color:white;
+.div-button button{
+    width: 20px;
+    height: 20px;
+    background-color:transparent;
+    
+    border:0;
 
-    transition: .3s linear;
+    cursor: pointer;
+    transition: .2s linear;
+}
+.div-button button svg{
+    width: 22px;
+    transition: .2s linear;
+}
+.div-button button svg:hover{
+    width: 25px;
+    margin-left: -1px;
 }
 
-.button button:hover{
-    background-color: white;
-    color:black;
+/***********************MODAL*********************/
+
+@keyframes modal{
+    from{
+        opacity: 0;
+        transform: translate3d(0,-60px,0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0px,0);
+    }
 }
 
 .bg{
-    top:0;
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+    top:0;
+    left: 0;
     background-color: rgba(7, 7, 7, 0.664);
-    display: flex;
+
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 .popup{
     width: 300px;
-    height: 300px;
+    height:200px;
     background-color: white;
+    padding: 10px;
 
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation: modal .6s;
+}
+
+.popup input[type="text"]{
+    width: 80%;
+    height: 30px;
+    margin-bottom: 10px;
+
+    border-radius: 0;
+    border:0;
+    border-bottom: 1px solid #2e2e2e;
+}
+
+.popup button{
+    height: 30px;
+    width: 100px;
+    background-color: #2e2e2e;
+    color: rgb(211, 211, 211);
+
+    border: 1px solid #2e2e2e;
+    transition: .2s linear;
+
+    cursor: pointer;
+}
+.popup button:hover{
+    background-color: black;
+}
+.div-sair{
+    width: 100%;
+}
+.div-sair div{
+    width: 20px;
+    padding: 0;
+    margin-top: -10px;
+
+    font-size: 35px;
+    float: right;
+
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+
+@media (max-width:425px){
+    .div-logo img {
+        width: 50px;
+    }
+
+    .div-add button svg {
+        width: 25px;
+    }
+    .div-add button svg:hover {
+        width: 28px;
+    }
+
+    .div-pesquisa input {
+        width: 86%;
+        height: 25px;
+    }
+    .div-pesquisa {
+        max-width: 200px;
+    }
+    .items-header {
+        justify-content: space-evenly;
+    }
 }
