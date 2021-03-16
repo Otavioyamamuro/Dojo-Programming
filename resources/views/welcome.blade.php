@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test-dev Estadão</title>
 
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
 
@@ -14,7 +14,7 @@
     <header>
         <div class="container div-header">
             <div class="div-logo">
-                <img src="../../public/img/logoEstadao.png" alt="">
+                <img src="/public/img/logoEstadao.png" alt="">
             </div>
             <div class="items-header">
                 <div class="div-add">
@@ -79,8 +79,8 @@
         </div>
     </div>
 
-    <script src="../../public/js/jquery.js"></script>
-    <script src="../../public/js/script.js"></script>
+    <script src="/public/js/jquery.js"></script>
+    <script src="/public/js/script.js"></script>
 
 
 </body>
