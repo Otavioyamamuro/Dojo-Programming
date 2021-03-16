@@ -19,6 +19,7 @@ class CarrosController extends Controller{
             $carro = new Carro();
             $carro->setMarca($in->Marca);
             $carro->setModelo($in->Modelo);
+            $carro->setId($in->id);
 
             array_push($arr,$carro);
 
@@ -49,16 +50,44 @@ class CarrosController extends Controller{
 
     function getCarrosbyId($id){
 
-        return null;
+
+        $carroQuery = CarrosModel::query()->find($id);
+
+
+        $carro = new Carro();
+        $carro->setMarca($carroQuery->Marca);
+        $carro->setModelo($carroQuery->Modelo);
+        $carro->setId($carroQuery->id);
+
+
+        return Array($carro);
+
+
     }
 
-    function setCarrosbyId(){
-        return "setCarrosbyId";
+    function setCarrosbyId(Request $request){
+
+
+        $retorno = CarrosModel::query()->where('id',$request->post('id'))->update(['Modelo'=>$request->post('modelo'),'Marca'=>$request->post('marca')]);
+
+        if($retorno){
+            return "sucesso";
+        }else{
+            return "falha";
+        }
 
     }
 
-    function deleteCarrosbyId(){
-        return "deleteCarrosbyId";
+    function deleteCarrosbyId(Request $request){
+
+        $retorno = CarrosModel::query()->where('id',$request->post('id'))->delete();
+
+        if($retorno){
+            return "sucesso";
+        }else{
+            return "falha";
+        }
+
     }
 
 }

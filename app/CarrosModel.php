@@ -9,7 +9,7 @@ class CarrosModel extends Model
 
     protected $connection = 'mysql';
     protected $table = 'Carro';
-
+    public $timestamps = false;
 
 
 }
